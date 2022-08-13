@@ -1,6 +1,9 @@
 import { useRouter } from "next/router";
+import { Fragment } from "react";
 import { getEventById } from "../../dummy-data";
-
+import EventSummary from "../../components/event-detail/event-summary";
+import EventLogistics from "../../components/event-detail/event-logistics";
+import EventContent from "../../components/event-detail/event-content";
 function EventDetailPage() {
   const router = useRouter();
 
@@ -11,10 +14,18 @@ function EventDetailPage() {
   }
 
   return (
-    <div>
-      <h1>Event Details Page</h1>
-      <code>{JSON.stringify(router.query)}</code>
-    </div>
+    <Fragment>
+      <EventSummary title={event.title} />
+      <EventLogistics
+        address={event.location}
+        date={event.date}
+        image={event.image}
+        imageAlt={event.title}
+      />
+      <EventContent>
+        {event.description}
+      </EventContent>
+    </Fragment>
   );
 }
 
