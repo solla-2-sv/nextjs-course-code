@@ -11,8 +11,21 @@ function ClientsPage() {
       <h1>The Clients Page</h1>
       <ul>
         {clients.map((client) => (
+          
           <li key={client.id}>
-            <Link href={`/clients/${client.id}`}>{client.name}</Link>
+            <code>{JSON.stringify(client)}</code>
+            <Link
+              href={{
+                pathname: "/clients/[id]",
+                query: {id: client.id}
+                // query: client 
+                // This second version will add the name as ?name=TheName, i.e. the
+                // unused bracket values are added as query params
+              }}
+            >
+              {client.name}
+            </Link>
+            {/* <Link href={`/clients/${client.id}`}>{client.name}</Link> */}
           </li>
         ))}
       </ul>
