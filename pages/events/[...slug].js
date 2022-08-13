@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-function EventSlugPage() {
+function FilteredEventPage() {
     const router = useRouter();
     
   return (
@@ -11,4 +11,4 @@ function EventSlugPage() {
   );
 }
 
-export default EventSlugPage;
+export default FilteredEventPage;
