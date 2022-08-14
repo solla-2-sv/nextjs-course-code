@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import { useRouter } from "next/router";
 
 import EventList from "../../components/events/event-list";
 import ResultsTitle from "../../components/events/results-title";
@@ -8,7 +7,6 @@ import ErrorAlert from "../../components/ui/error-alert";
 import { getFilteredEvents } from "../../lib/events-lib";
 
 function FilteredEventsPage({ events: filteredEvents, year, month }) {
-  const router = useRouter();
 
   // const filterData = router.query.slug;
 
