@@ -65,6 +65,10 @@ function FilteredEventsPage({ events: filteredEvents, year, month }) {
   );
 }
 
+// --------------------------------------------------------
+// This page may well be used with Server Side Rendering (SSR)
+// --------------------------------------------------------
+
 export async function getStaticPaths(context) {
   // const {params} = context;
   // console.log('params:', params)
